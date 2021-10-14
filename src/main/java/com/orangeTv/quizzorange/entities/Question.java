@@ -59,7 +59,7 @@ public class Question {
         this.startDate = startDate;
     }
     public Date getEndDate() {
-        return startDate;
+        return endDate;
     }
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
