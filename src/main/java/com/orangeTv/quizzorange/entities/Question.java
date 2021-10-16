@@ -11,14 +11,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-@Data   
-@NoArgsConstructor
-@AllArgsConstructor
+@Data  
 @ToString
 @Entity
 public class Question {
@@ -29,6 +25,7 @@ public class Question {
     private String content;
     private Date startDate;
     private Date endDate;
+    private  int point;
 
     @OneToMany(targetEntity = Response.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "r_fk", referencedColumnName = "id")
@@ -40,6 +37,14 @@ public class Question {
     public void setId(int id) {
         this.id = id;
     }
+
+    public int getPoint() {
+        return point;
+    }
+    public void setPoint(int point) {
+        this.point = point;
+    }
+
     public String getContent() {
         return content;
     }

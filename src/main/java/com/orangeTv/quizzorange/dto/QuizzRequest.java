@@ -18,4 +18,8 @@ public class QuizzRequest {
         return question;
     }
 
+    public void setQuestion(Question question) {
+        this.question = question;
+    }
+
 }
