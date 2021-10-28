@@ -1,7 +1,6 @@
 package com.orangeTv.quizzorange.entities;
 
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -58,16 +57,22 @@ public class Question {
         this.title = title;
     }
     public Date getStartDate() {
-        return startDate;
+        Calendar calendar = Calendar.getInstance();
+        return calendar.getTime();
     }
     public void setStartDate(Date startDate) {
-        this.startDate = startDate;
+        Calendar calendar = Calendar.getInstance();
+        this.startDate = calendar.getTime();
     }
     public Date getEndDate() {
-        return endDate;
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DAY_OF_MONTH,+7);
+        return calendar.getTime();
     }
     public void setEndDate(Date endDate) {
-        this.endDate = endDate;
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DAY_OF_MONTH,+7);
+        this.endDate = calendar.getTime();
     }
 
     public List<Response> getResponses() {
@@ -76,5 +81,12 @@ public class Question {
 
     public void setResponses(List<Response> responses) {
         this.responses = responses;
+    }
+
+    public Date getSDate(){
+        return startDate;
+    }
+    public Date getEDate(){
+        return endDate;
     }
 }
